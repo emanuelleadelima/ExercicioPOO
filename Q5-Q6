@@ -1,0 +1,35 @@
+public class Retangulo {
+  private double comprimento;
+  private double largura;
+  private double area;
+  private double perimetro;
+
+  public Retangulo(double comprimento, double largura, double area, double perimetro){
+    this.comprimento = comprimento;
+    this.largura = largura;
+  }
+
+  public void CalcularArea(){
+    area = comprimento*largura;
+  }
+
+  public void CalcularPerimetro(){
+    perimetro = (2*comprimento)+(2*largura);
+  }
+
+  public void imprimir(){
+    System.out.println(comprimento);
+    System.out.println(largura);
+    System.out.println(area);
+    System.out.println(perimetro);
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Retangulo r = new Retangulo(5, 10);
+    r.calcularArea();
+    r.calcularPerimetro();
+    r.imprimir();
+  }
+}
