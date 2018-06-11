@@ -1,0 +1,32 @@
+public class Quadrado{
+  private double lado;
+  private double area;
+  private double perimetro;
+  
+  public Quadrado(double lado){
+    this.lado = lado;
+  }
+  
+  public void calcularArea(){
+    area = lado*lado;
+  }
+  
+  pubçic void calcularPerimetro(){
+    perimetro = 4*lado;
+  }
+  
+  public void imprimir(){
+    System.out.println(lado);
+    System.out.println(area);
+    System.out.println(perimetro);
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Quadrado q = new Quadrado(7);
+    q.calcularArea();
+    q.calcularPerimetro();
+    q.imprimir();
+  }
+}
