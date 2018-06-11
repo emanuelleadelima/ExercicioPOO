@@ -1,0 +1,63 @@
+public class Televisor{
+  private boolean ligado;
+  private int canal;
+  private int volume;
+  
+  public Televisor(boolean ligado, int canal, int volume){
+    this.ligado = ligado;
+    this.canal = canal;
+    this.volume = volume;
+  }
+  
+  public void setLigado(boolean ligado){
+    this.ligado = ligado;
+  }
+  
+  public void setCanal(int canal){
+    this.canal = canal;
+  }
+  
+  public void setVolume(int volume){
+    this.volume = volume;
+  }
+  
+  public boolean getLigado(){
+    return ligado;
+  }
+  
+  public int getCanal(){
+    return canal;
+  }
+  
+  public int getVolume(){
+    return volume;
+  }
+  
+  public void imprimir(){
+    System.out.println(ligado);
+    System.out.println(canal);
+    System.out.println(volume);
+  }
+  
+  public void ligar(){
+    if(getLigado() == False){
+      ligado = 1;
+      System.out.println("o televisor está ligado");
+    }
+  }
+  
+  public void desligar(){
+    if(getLigado() == True){
+      ligado = 0;
+      System.out.println("o televisor está desligado");
+    }
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Televisor t = new Televisor(1, 11, 17);
+    t.imprimir();
+    t.desligar();
+  }
+}
