@@ -1,0 +1,133 @@
+public class Moto{
+  private string marca;
+  private string modelo;
+  private string cor;
+  private int marcha;
+  private int menorMarcha = 0;
+  private int maiorMarcha = 5;
+  private boolean ligado;
+  
+  public Moto(string marca, string modelo, string cor, int marcha){
+    this.marca = marca;
+    this.modelo = modelo;
+    this.cor = cor;
+    this.marcha = marcha;
+    this.menorMarcha = menorMarcha;
+    this.maiorMarcha = maiorMarcha;
+    this.ligado = ligado;
+  }
+  
+  public void setMarca(string marca){
+    this.marca = marca;
+  }
+  
+  public void setModelo(string modelo){
+    this.modelo = modelo;
+  }
+  
+  public void setCor(string cor){
+    this.cor = cor;
+  }
+  
+  public void setMarcha(int marcha){
+    this.marcha = marcha;
+  }
+  
+  public void setLigado(boolean ligado){
+    this.ligado = ligado;
+  }
+  
+  public string getMarca(){
+    return marca;
+  }
+  
+  public string getModelo(){
+    return modelo;
+  }
+  
+  public string getCor(){
+    return cor;
+  }
+  
+  public string getMarcha(){
+    return marcha;
+  }
+  
+  public boolean getLigado(){
+    return ligado;
+  }
+  
+  public void imprimir(){
+    System.out.println(marca);
+    System.out.println(modelo);
+    System.out.println(cor);
+    System.out.println(marcha);
+    System.out.println(menorMarcha);
+    System.out.println(maiorMarcha);
+    System.out.println(ligado);
+  }
+  
+  public void marcha(){
+    if (getMarcha() == 0){
+      System.out.println("Marcha 0 - neutra");
+    }
+    else if (getMarcha() == 1){
+      System.out.println("Marcha 1 - primeira");
+    }
+    else if (getMarcha() == 2){
+      System.out.println("Marcha 2 - segunda");
+    }
+    else if (getMarcha() == 3){
+      System.out.println("Marcha 3 - terceira");
+    }
+    else if (getMarcha() == 4){
+      System.out.println("Marcha 4 - quarta");
+    }
+    else if (getMarcha() == 5){
+      System.out.println("Marcha 5 - quinta");
+    }
+    else{
+      System.out.println("Apenas 5 marchas");
+    }
+  }
+  
+  public void marchaAcima{
+    if (getMarcha() >= menorMarcha and getMarcha() < maiorMarcha){
+      marcha ++;
+    else{
+      System.out.println("Apenas 5 marchas");
+    }
+  }
+  
+  public void marchaAbaixo{
+    if (getMarcha() > menorMarcha and getMarcha() <= maiorMarcha){
+      marcha --;
+    else{
+      System.out.println("Apenas 5 marchas");
+    }
+  }
+  
+  public void ligar(){
+    if (getLigado() == False){
+      ligado = 1;
+    }
+  }
+  
+  public void desligar(){
+    if (getLigado == True){
+      ligado = 0;
+    }
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Moto m = new Moto("Honda", "CG 160 Fan", "Vermelho", 4);
+    m.imprimir();
+    m.marcha();
+    m.marchaAcima();
+    m.marchaAbaixo();
+    m.ligar();
+    m.desligar();
+  }
+}
