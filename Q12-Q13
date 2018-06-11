@@ -4,7 +4,7 @@ public class Moto{
   private string cor;
   private int marcha;
   private int menorMarcha = 0;
-  privaite int maiorMarcha = 5;
+  private int maiorMarcha = 5;
   
   public Moto(string marca, string modelo, string cor, int marcha){
     this.marca = marca;
