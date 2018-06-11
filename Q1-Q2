@@ -1,0 +1,48 @@
+public class Pessoa {
+  private string nome;
+  private string endereço;
+  private string telefone;
+  
+  public class Pessoa(string nome, string endereço, string telefone){
+    this.nome = nome;
+    this.endereço = endereço;
+    this.telefone = telefone;
+  }
+  
+  public void setNome(string nome){
+    this.nome = nome;
+  }
+  
+  public void setEndereço(string endereço){
+    this.endereço = endereço;
+  }
+  
+  public void setTelefone(string telefone){
+    this.telefone = telefone;
+  }
+  
+  public string getNome(){
+    return nome;
+  }
+  
+  public string getEndereço(){
+    return endereço;
+  }
+  
+  public string getTelefone(){
+    return telefone;
+  }
+  
+  public void imprimir(){
+    System.out.println(nome);
+    System.out.println(endereço);
+    System.out.println(telefone);
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Pessoa x = new Pessoa ("Ana", "PB", "976998876");
+    x.imprimir();
+  }
+}
