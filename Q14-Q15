@@ -111,9 +111,9 @@ public class Moto{
 public class Principal{
   public static void main(String[]args){
     Moto m = new Moto("Honda", "CG 160 Fan", "Vermelho", 4);
-    m.imprimir;
-    m.marcha;
-    m.marchaAcima;
-    m.marchaAbaixo;
+    m.imprimir();
+    m.marcha();
+    m.marchaAcima();
+    m.marchaAbaixo();
   }
 }
