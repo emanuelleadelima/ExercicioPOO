@@ -2,7 +2,7 @@ public class Moto{
   private string marca;
   private string modelo;
   private string cor;
-  private string marcha;
+  private int marcha;
   
   public Moto(string marca, string modelo, string cor, int marcha){
     this.marca = marca;
@@ -23,7 +23,7 @@ public class Moto{
     this.cor = cor;
   }
   
-  public void setMarcha(string marcha){
+  public void setMarcha(int marcha){
     this.marcha = marcha;
   }
   
@@ -51,23 +51,23 @@ public class Moto{
   }
   
   public void marcha(){
-    if (getMarcha() == "0"){
-      setMarcha("Marcha 0 - neutra");
+    if (getMarcha() == 0){
+      System.out.println("Marcha 0 - neutra");
     }
-    else if (getMarcha() == "1"){
-      setMarcha("Marcha 1 - primeira");
+    else if (getMarcha() == 1){
+      System.out.println("Marcha 1 - primeira");
     }
-    else if (getMarcha() == "2"){
-      setMarcha("Marcha 2 - segunda");
+    else if (getMarcha() == 2){
+      System.out.println("Marcha 2 - segunda");
     }
-    else if (getMarcha() == "3"){
-      setMarcha("Marcha 3 - terceira");
+    else if (getMarcha() == 3){
+      System.out.println("Marcha 3 - terceira");
     }
-    else if (getMarcha() == "4"){
-      setMarcha("Marcha 4 - quarta");
+    else if (getMarcha() == 4){
+      System.out.println("Marcha 4 - quarta");
     }
-    else if (getMarcha() == "5"){
-      setMarcha("Marcha 5 - quinta");
+    else if (getMarcha() == 5){
+      System.out.println("Marcha 5 - quinta");
     }
     else{
       System.out.println("Apenas 5 marchas");
@@ -77,7 +77,7 @@ public class Moto{
 
 public class Principal{
   public static void main(String[]args){
-    Moto m = new Moto("Honda", "CG 160 Fan", "Vermelho", "4");
+    Moto m = new Moto("Honda", "CG 160 Fan", "Vermelho", 4);
     m.imprimir;
     m.marcha;
   }
