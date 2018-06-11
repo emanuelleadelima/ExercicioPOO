@@ -1,0 +1,84 @@
+public class Moto{
+  private string marca;
+  private string modelo;
+  private string cor;
+  private string marcha;
+  
+  public Moto(string marca, string modelo, string cor, int marcha){
+    this.marca = marca;
+    this.modelo = modelo;
+    this.cor = cor;
+    this.marcha = marcha;
+  }
+  
+  public void setMarca(string marca){
+    this.marca = marca;
+  }
+  
+  public void setModelo(string modelo){
+    this.modelo = modelo;
+  }
+  
+  public void setCor(string cor){
+    this.cor = cor;
+  }
+  
+  public void setMarcha(string marcha){
+    this.marcha = marcha;
+  }
+  
+  public string getMarca(){
+    return marca;
+  }
+  
+  public string getModelo(){
+    return modelo;
+  }
+  
+  public string getCor(){
+    return cor;
+  }
+  
+  public string getMarcha(){
+    return marcha;
+  }
+  
+  public void imprimir(){
+    System.out.println(marca);
+    System.out.println(modelo);
+    System.out.println(cor);
+    System.out.println(marcha);
+  }
+  
+  public void marcha(){
+    if (getMarcha() == "0"){
+      setMarcha("Marcha 0 - neutra");
+    }
+    else if (getMarcha() == "1"){
+      setMarcha("Marcha 1 - primeira");
+    }
+    else if (getMarcha() == "2"){
+      setMarcha("Marcha 2 - segunda");
+    }
+    else if (getMarcha() == "3"){
+      setMarcha("Marcha 3 - terceira");
+    }
+    else if (getMarcha() == "4"){
+      setMarcha("Marcha 4 - quarta");
+    }
+    else if (getMarcha() == "5"){
+      setMarcha("Marcha 5 - quinta");
+    }
+    else{
+      System.out.println("Apenas 5 marchas");
+    }
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Moto m = new Moto("Honda", "CG 160 Fan", "Vermelho", "4");
+    m.imprimir;
+    m.marcha;
+  }
+}
