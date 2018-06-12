@@ -1,0 +1,119 @@
+public class Televisor{
+  private boolean ligado;
+  private int canal;
+  private int volume;
+  private int numeroCanais = 100;
+  private int volumeMaximo = 100;
+  
+  public Televisor(boolean ligado, int canal, int volume){
+    this.ligado = ligado;
+    this.canal = canal;
+    this.volume = volume;
+    this.numeroCanais = numeroCanais;
+    this.volumeMaximo = volumeMaximo;
+  }
+  
+  public void setLigado(boolean ligado){
+    this.ligado = ligado;
+  }
+  
+  public void setCanal(int canal){
+    this.canal = canal;
+  }
+  
+  public void setVolume(int volume){
+    this.volume = volume;
+  }
+  
+  public boolean getLigado(){
+    return ligado;
+  }
+  
+  public int getCanal(){
+    return canal;
+  }
+  
+  public int getVolume(){
+    return volume;
+  }
+  
+  public int getNumeroCanais(){
+    return numeroCanais;
+  }
+  
+  public int getVolumeMaximo(){
+    return volumeMaximo;
+  }
+  
+  public void imprimir(){
+    System.out.println(ligado);
+    System.out.println(canal);
+    System.out.println(volume);
+    System.out.println(numeroCanais);
+    System.out.println(volumeMaximo);
+  }
+  
+  public void ligar(){
+    if(getLigado() == False){
+      ligado = 1;
+      System.out.println("o televisor está ligado");
+    }
+  }
+  
+  public void desligar(){
+    if(getLigado() == True){
+      ligado = 0;
+      System.out.println("o televisor está desligado");
+    }
+  }
+  
+  public void canalAcima(){
+    if (getCanal() < getNumeroCanais() and getCanal() > 0){
+      canal++;
+    else if (getCanal() > getNumeroCanais()){
+      canal = 1;
+    }
+    else{
+      System.out.println("Canal negativo; inexistente");
+    }
+  }
+  
+  public void canalAbaixo(){
+    if(getCanal() < getNumeroCanais() and getCanal() > 0){
+      canal--;
+    }
+    else if (getCanal() < 0){
+      canal = 100;
+    }
+    else{
+      System.out.println("Ultrapassagem da quantidade de canais disponíveis");
+    }
+  }
+  
+  public void volumeAcima(){
+    if(getVolume() >= 0 and getVolume() < 100){
+      volume++;
+    }
+    else{
+      System.out.println("Quantidade inatingível de volume requisitada");
+    }
+  }
+  
+  public void volumeAbaixo(){
+    if(getVolume() > 0 and getVolume() <= 100){
+      volume--;
+    else{
+      System.out.println("Quantidade inatingível de volume requisitada");
+    }
+  }  
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Televisor t = new Televisor(1, 11, 17);
+    t.imprimir();
+    t.desligar();
+    t.canalAcima();
+    t.volumeAbaixo();
+  }
+}
