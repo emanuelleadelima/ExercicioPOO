@@ -43,7 +43,7 @@ public class Microondas{
 
 public class Principal{
   public static void main(String[]args){
-    Microondas m = new Microondas(1);
+    Microondas m = new Microondas(1, 0);
     m.getLigado();
     m.imprimir();
     m.desligar();
