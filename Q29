@@ -1,0 +1,51 @@
+public class Microondas{
+  private boolean ligado;
+  private boolean portaFechada;
+  
+  public Microondas(boolean ligado){
+    this.ligado = ligado;
+    this.portaFechada = portaFechada;
+  }
+  
+  public void setLigado(boolean ligado){
+    this.ligado = ligado;
+  }
+  
+  public boolean getLigado(){
+    return ligado;
+  }
+  
+  public void setPortaFechada(){
+    this.portaFechada = portaFechada;
+  }
+  
+  public boolean getPortaFechada(){
+    return portaFechada;
+  }
+  
+  public void imprimir(){
+    System.out.println(ligado);
+    System.out.println(portaFechada);
+  }
+  
+  public void ligar(){
+    if (getLigado() == False){
+      ligado = 1;
+    }
+  }
+  
+  public void desligar(){
+    if (getLigado() == True){
+      ligado = 0;
+    }
+  }
+}
+
+public class Principal{
+  public static void main(String[]args){
+    Microondas m = new Microondas(1);
+    m.getLigado();
+    m.imprimir();
+    m.desligar();
+  }
+}
