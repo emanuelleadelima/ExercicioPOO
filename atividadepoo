@@ -1,0 +1,146 @@
+public class Candidato {
+    private String nomeCandidato;
+    private String partido;
+    private double votos = 0;
+
+    public Candidato(String nomeCandidato, String Partido, double votos){
+        this.nomeCandidato = nomeCandidato;
+        this.partido = partido;
+        this.votos = votos;
+    }
+    
+    public void setNomeCandidato(String candidato){
+        this.nomeCandidato = nomeCandidato;
+    }
+    
+    public String getNomeCandidato(){
+        return nomeCandidato;
+    }
+    
+    public void setPartido(String partido){
+        this.partido = partido;
+    }
+    
+    public String getPartido(){
+        return partido;
+    }
+    
+    public void setVotos(double votos){
+        this.votos = votos;
+    }
+    
+    public double getVotos(){
+        return votos;
+    }
+    
+    public void numeroVotos(){
+        votos++;
+        }
+    }
+}
+
+public class Urna{
+    private String Candidato1 = "Jose, Partido da Felicidade";
+    private String Candidato2 = "Joao, Partido da Esperanca";
+    private double votosC1;
+    private double votosC2;
+    private double TotalDeVotosBrancosOuNulos;
+    private double TotalGeralDeVotos;
+    
+    public Urna{
+        this.Candidato1 = Candidato1;
+        this.Candidato2 = Candidato2;
+        this.TotalDeVotosBrancosOuNulos = TotalDeVotosBrancosOuNulos;
+        this.TotalGeralDeVotos = TotalGeralDeVotos;
+        this.votosC1 = votosC1;
+        this.votosC2 = votosC2;
+    }
+    
+    public String getCandidato1(){
+        return Candidato1;
+    }
+    
+    public String getCandidato2(){
+        return Candidato2;
+    }
+    
+    public double getTotalDeVotosBrancosOuNulos(){
+        return TotalDeVotosBrancosOuNulos;
+    }
+    
+    public double getTotalGeralDeVotos(){
+        return TotalGeralDeVotos;
+    }
+    
+    public double getVotosC1(){
+        return votosC1;
+    }
+    
+    public double getVotosC2(){
+        return votosC2;
+    }
+    
+    public void votar(){
+        System.out.prinln("Inicie sua votação: 1, 2 ou 3");
+        scanner teclado = new scanner(System.in);
+        int voto = teclado.nextInt();
+        if (voto != 0){
+            if (voto == 1){
+                votosC1++;
+                TotalGeralDeVotos++;
+                System.out.println("Para encerrar a votacao, digite 0");
+                scanner teclado = new scanner(System.in);
+                int voto = teclado.nextInt();
+            }
+            else if (voto == 2){
+                votosC2++;
+                TotalGeralDeVotos++;
+                System.out.println("Para encerrar a votacao, digite 0");
+                scanner teclado = new scanner(System.in);
+                int voto = teclado.nextInt();
+            }
+            else if (voto == 3){
+                TotalDeVotosBrancosOuNulos++;
+                TotalGeralDeVotos++;
+                System.out.println("Para encerrar a votacao, digite 0");
+                scanner teclado = new scanner(System.in);
+                int voto = teclado.nextInt();
+            }
+            else{
+                System.out.println("Numero inexistente inserido, tente de novo");
+            }
+        }
+    }
+    
+    public void exibirTotalGeralDeVotos(){
+        System.out.println(TotalGeralDeVotos);
+    }
+    
+    public void exibirTotalDeVotosBrancosNulos(){
+        System.out.println(TotalDeVotosBrancosOuNulos);
+    }
+    
+    public void exibirTotalDeVotosDosCandidatos(){
+        System.out.println("Candidato 1 =", votosc1);
+        System.out.println("Candidato 2 =", votosc2);
+    }
+    public void exibirDadosDoCandidatoVencedor(){
+        if (votosC1() > votosC2()){
+            System.out.println("Vencedor =", Candidato1);
+            System.out.println("Numero = 1");
+            System.out.println("Quantidade de votos =", votosC1);
+        }
+        else if (getVotosC2()>getVotosC1()){
+            System.out.println("Vencedor =", Candidato2);
+            System.out.println("Numero = 2");
+            System.out.println("Quantidade de votos =", votosC2);
+        }
+    }
+}
+
+public class Principal{
+    public static void main(String[]args){
+        Candidato c1 = new Candidato("Jose", "Partido da Felicidade");
+        Candidato c2 = new Candidato("Joao", "Partido da Esperanca");
+    }
+}
