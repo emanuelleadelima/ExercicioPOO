@@ -25,6 +25,10 @@ public class Candidato {
         return partido;
     }
     
+    public double getVotos(){
+        return votos;
+    }
+    
     public void numeroVotos(){
         votos++;
         }
@@ -107,19 +111,23 @@ public class Urna{
     }
     
     public void exibirTotalDeVotosDosCandidatos(){
-        System.out.println("Candidato 1 =", votosc1);
-        System.out.println("Candidato 2 =", votosc2);
+        System.out.println("Candidato 1 =" + candidato1);
+        System.out.println("Candidato 2 =" + candidato2);
     }
+    
     public void exibirDadosDoCandidatoVencedor(){
-        if (votosC1() > votosC2()){
-            System.out.println("Vencedor =", Candidato1);
-            System.out.println("Numero = 1");
-            System.out.println("Quantidade de votos =", votosC1);
+        if (candidato1.getVotos() > candidato2.getVotos()){
+            System.out.println("Vencedor =" + candidato1.getNomeCandidato());
+            System.out.println(candidato1.getPartido());
+            System.out.println("Quantidade de votos =" + candidato1.getVotos());
         }
-        else if (getVotosC2()>getVotosC1()){
-            System.out.println("Vencedor =", Candidato2);
-            System.out.println("Numero = 2");
-            System.out.println("Quantidade de votos =", votosC2);
+        else if (candidato2.getVotos() > candidato1.getVotos()){
+            System.out.println("Vencedor =" + candidato2.getNomeCanidato());
+            System.out.println(candidato2.getPArtido());
+            System.out.println("Quantidade de votos =" + candidato2.getVotos());
+        }
+        else{
+            System.out.println("Empate");
         }
     }
 }
