@@ -1,12 +1,12 @@
 public class Candidato {
     private String nomeCandidato;
     private String partido;
-    private double votos = 0;
+    private double votos;
 
-    public Candidato(String nomeCandidato, String Partido, double votos){
+    public Candidato(String nomeCandidato, String Partido,){
         this.nomeCandidato = nomeCandidato;
         this.partido = partido;
-        this.votos = votos;
+        this.votos = 0;
     }
     
     public void setNomeCandidato(String candidato){
@@ -25,43 +25,33 @@ public class Candidato {
         return partido;
     }
     
-    public void setVotos(double votos){
-        this.votos = votos;
-    }
-    
-    public double getVotos(){
-        return votos;
-    }
-    
     public void numeroVotos(){
         votos++;
         }
     }
 }
 
+import java.util.Scanner;
+
 public class Urna{
-    private String Candidato1 = "Jose, Partido da Felicidade";
-    private String Candidato2 = "Joao, Partido da Esperanca";
-    private double votosC1;
-    private double votosC2;
+    private Candidato candidato1;
+    private Candidato candidato2;
     private double TotalDeVotosBrancosOuNulos;
     private double TotalGeralDeVotos;
     
-    public Urna{
-        this.Candidato1 = Candidato1;
-        this.Candidato2 = Candidato2;
-        this.TotalDeVotosBrancosOuNulos = TotalDeVotosBrancosOuNulos;
-        this.TotalGeralDeVotos = TotalGeralDeVotos;
-        this.votosC1 = votosC1;
-        this.votosC2 = votosC2;
+    public Urna(Candidato candidato1, Candidato candidato2){
+        this.Candidato1 = candidato1;
+        this.Candidato2 = candidato2;
+        this.TotalDeVotosBrancosOuNulos = 0;
+        this.TotalGeralDeVotos = 0;
     }
     
-    public String getCandidato1(){
-        return Candidato1;
+    public Candidato getCandidato1(){
+        return candidato1;
     }
     
-    public String getCandidato2(){
-        return Candidato2;
+    public Candidato getCandidato2(){
+        return candidato2;
     }
     
     public double getTotalDeVotosBrancosOuNulos(){
@@ -70,14 +60,6 @@ public class Urna{
     
     public double getTotalGeralDeVotos(){
         return TotalGeralDeVotos;
-    }
-    
-    public double getVotosC1(){
-        return votosC1;
-    }
-    
-    public double getVotosC2(){
-        return votosC2;
     }
     
     public void votar(){
@@ -107,8 +89,12 @@ public class Urna{
                 int voto = teclado.nextInt();
             }
             else{
-                System.out.println("Numero inexistente inserido, tente de novo");
+                System.out.println("Numero invalido inserido, tente de novo");
             }
+        }
+        
+        else{
+            System.out.println("Se nao votou, escolha 1, 2 ou 3; se ja votou, votacao encerrada.");
         }
     }
     
