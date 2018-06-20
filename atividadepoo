@@ -3,7 +3,7 @@ public class Candidato {
     private String partido;
     private double votos;
 
-    public Candidato(String nomeCandidato, String Partido,){
+    public Candidato(String nomeCandidato, String partido,){
         this.nomeCandidato = nomeCandidato;
         this.partido = partido;
         this.votos = 0;
@@ -103,15 +103,18 @@ public class Urna{
     }
     
     public void exibirTotalGeralDeVotos(){
-        System.out.println(TotalGeralDeVotos);
+        System.out.println("Total geral de votos =" + TotalGeralDeVotos);
     }
     
     public void exibirTotalDeVotosBrancosNulos(){
-        System.out.println(TotalDeVotosBrancosOuNulos);
+        System.out.println("Total de votos brancos ou nulos =" + TotalDeVotosBrancosOuNulos);
     }
     
-    public void exibirTotalDeVotosDosCandidatos(){
+    public void exibirTotalDeVotosDoCandidato1(){
         System.out.println("Candidato 1 =" + candidato1);
+    }
+    
+    public void exibirTotalDeVotosDoCandidato2(){
         System.out.println("Candidato 2 =" + candidato2);
     }
     
@@ -134,7 +137,29 @@ public class Urna{
 
 public class Principal{
     public static void main(String[]args){
-        Candidato c1 = new Candidato("Jose", "Partido da Felicidade");
-        Candidato c2 = new Candidato("Joao", "Partido da Esperanca");
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Cadastramento dos candidatos:");
+        System.out.println("Nome do candidato 1:");
+        nomeCandidato = teclado.nextLine();
+        System.out.println("Partido do candidato 1:");
+        partido = teclado.nextLine();
+        
+        Candidato c1 = new Candidato(nomeCandidato, partido);
+        
+        System.out.println("Nome do candidato 2:");
+        nomeCandidato = teclado.nextLine();
+        System.out.println("Partido do candidato 2:");
+        partido = teclado.nextLine();
+        
+        Candidato c2 = new Candidato(nome,partido);
+        
+        Urna urna = new Urna(candidato1, candidato2);
+       
+        urna.votar();
+        urna.exibirTotalGeralVotos();
+        urna.exibirTotalDeVotosBrancosNulos();
+        urna.exibirTotalDeVotosDoCandidato1();
+        urna.exibirTotalDeVotosDoCandidato2();
+        urna.exibirDadosDoCandidatoVencedor();
     }
 }
