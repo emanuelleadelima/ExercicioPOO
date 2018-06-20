@@ -67,40 +67,50 @@ public class Urna{
     }
     
     public void votar(){
-        System.out.prinln("Inicie sua votação: 1, 2 ou 3");
-        scanner teclado = new scanner(System.in);
-        int voto = teclado.nextInt();
-        if (voto != 0){
-            if (voto == 1){
-                votosC1++;
-                TotalGeralDeVotos++;
-                System.out.println("Para encerrar a votacao, digite 0");
-                scanner teclado = new scanner(System.in);
-                int voto = teclado.nextInt();
-            }
-            else if (voto == 2){
-                votosC2++;
-                TotalGeralDeVotos++;
-                System.out.println("Para encerrar a votacao, digite 0");
-                scanner teclado = new scanner(System.in);
-                int voto = teclado.nextInt();
-            }
-            else if (voto == 3){
-                TotalDeVotosBrancosOuNulos++;
-                TotalGeralDeVotos++;
-                System.out.println("Para encerrar a votacao, digite 0");
-                scanner teclado = new scanner(System.in);
-                int voto = teclado.nextInt();
-            }
-            else{
-                System.out.println("Numero invalido inserido, tente de novo");
-            }
-        }
-        
-        else{
-            System.out.println("Se nao votou, escolha 1, 2 ou 3; se ja votou, votacao encerrada.");
+        while True{
+            System.out.prinln("Inicie sua votação: 1, 2 ou 3");
+            scanner teclado = new scanner(System.in);
+            int voto = teclado.nextInt();
+            if (voto != 0){
+                if (voto == 1){
+                    votosC1++;
+                    TotalGeralDeVotos++;
+                    System.out.println("Para encerrar a votacao, digite 0");
+                    scanner teclado = new scanner(System.in);
+                    int voto = teclado.nextInt();
+                }
+                else if (voto == 2){
+                    votosC2++;
+                    TotalGeralDeVotos++;
+                    System.out.println("Para encerrar a votacao, digite 0");
+                    scanner teclado = new scanner(System.in);
+                    int voto = teclado.nextInt();
+                }
+                else if (voto == 3){
+                    TotalDeVotosBrancosOuNulos++;
+                    TotalGeralDeVotos++;
+                    System.out.println("Para encerrar a votacao, digite 0");
+                    scanner teclado = new scanner(System.in);
+                    int voto = teclado.nextInt();
+                }
+                else{
+                    System.out.println("Numero invalido inserido, tente de novo");
+                    break;
+                }
         }
     }
+    
+    public void votacaoComRecursividade(){
+        System.out.println("Digite 1 para votar em " + candidato1.getNome());
+        System.out.println("Digite 2 para votar em " + candidato2.getNome());
+        System.out.println("Digite 3 para votar nulo ou branco");
+        System.out.println("Digite 0 para sair");
+        int voto = teclado.nextInt();
+        if(voto!=0){
+            votar(voto);
+            votacaoComRecursividade();
+        }        
+     }
     
     public void exibirTotalGeralDeVotos(){
         System.out.println("Total geral de votos =" + TotalGeralDeVotos);
